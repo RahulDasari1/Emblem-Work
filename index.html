@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emblem Work: Where Purpose Finds Its Profession</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configure Tailwind to use a custom font and colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0F172A", // Deep Navy/Slate
+              accent: "#10B981", // Emerald Green for CTA
+              secondary: "#E0F2F1", // Light contrast
+              "app-bg": "#F9FAFB", // Light gray background for the app section
+              "card-hover": "#F0FDF4", // Very light green for hover effect
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Apply smooth scrolling and Inter font globally */
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .job-card {
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+      }
+      .job-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        background-color: theme("colors.card-hover");
+      }
+      .input-field:focus {
+        border-color: theme("colors.accent");
+        box-shadow: 0 0 0 3px theme("colors.accent");
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="bg-primary shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo/Brand Name -->
+          <div class="flex-shrink-0">
+            <span class="text-2xl font-extrabold text-accent">Emblem</span>
+            <span class="text-2xl font-light text-secondary ml-1">Work</span>
+          </div>
+          <!-- Desktop Navigation Links -->
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#mission"
+              class="text-secondary hover:text-accent transition duration-300 font-medium"
+              >Mission</a
+            >
+            <a
+              href="#features"
+              class="text-secondary hover:text-accent transition duration-300 font-medium"
+              >Features</a
+            >
+            <a
+              href="#job-board-app"
+              class="text-secondary hover:text-accent transition duration-300 font-medium"
+              >Job Board</a
+            >
+            <a
+              href="#contact"
+              class="text-secondary hover:text-accent transition duration-300 font-medium"
+              >Contact</a
+            >
+          </nav>
+          <!-- CTA Button -->
+          <a
+            href="#job-board-app"
+            class="hidden md:block bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-emerald-400 transition duration-300 shadow-md"
+          >
+            Find Your Emblem
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. Hero Section (Marketing/Landing) -->
+    <section
+      class="bg-primary text-secondary pt-16 pb-24 md:pt-32 md:pb-40 relative overflow-hidden"
+        style="background-image: url("/web-app/src/assets/smiling-diverse-businesswomen-shake-hands-group-meeting-deal-concept.jpg");"
+      >
+      <div class="absolute inset-0 z-0 opacity-5">
+        <!-- Subtle background pattern -->
+        <svg class="h-full w-full" fill="none" viewBox="0 0 100 100">
+          <defs>
+            <pattern
+              id="pattern-circles"
+              x="0"
+              y="0"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="1" cy="1" r="0.5" fill="#374151" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#pattern-circles)" />
+        </svg>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <h1
+          class="text-5xl sm:text-6xl lg:text-8xl font-extrabold tracking-tight mb-6 leading-tight"
+        >
+          Where <span class="text-accent">Purpose</span> Finds Its
+          <span class="text-accent">Profession</span>.
+        </h1>
+        <p
+          class="text-xl sm:text-2xl lg:text-3xl text-gray-300 max-w-3xl mx-auto mb-10 font-light"
+        >
+          Curating roles that align with your values, career trajectory, and
+          personal mission.
+        </p>
+        <!-- Primary CTAs -->
+        <div class="flex justify-center space-x-4">
+          <a
+            href="#job-board-app"
+            class="bg-accent text-primary text-lg font-bold px-8 py-4 rounded-xl shadow-xl hover:bg-emerald-400 transform hover:scale-105 transition duration-300"
+          >
+            Find Your Emblem
+          </a>
+          <a
+            href="#mission"
+            class="bg-transparent border-2 border-secondary text-secondary text-lg font-bold px-8 py-4 rounded-xl shadow-md hover:bg-secondary hover:text-primary transition duration-300"
+          >
+            Define Your Purpose
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Value Proposition (Our Mission) -->
+    <section id="mission" class="py-20 sm:py-32 bg-secondary text-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight text-center mb-6"
+        >
+          Beyond the Job Description. Into the Mission.
+        </h2>
+        <p class="mt-6 text-xl text-gray-600 max-w-4xl mx-auto text-center">
+          Emblem Work is the essential link between meaningful roles and those
+          driven to fill them. We bypass superficial keywords, using intelligent
+          matching to connect you with companies that genuinely share your
+          commitment to impact and growth.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Features Section -->
+    <section id="features" class="py-20 sm:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-center text-primary mb-12"
+        >
+          Powerful Tools for Purpose-Driven Careers
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="p-6 bg-app-bg rounded-xl shadow-lg border border-gray-100 transition duration-300 hover:shadow-xl"
+          >
+            <i data-lucide="sparkles" class="w-8 h-8 text-accent mb-4"></i>
+            <h3 class="text-xl font-bold text-primary mb-2">
+              AI-Driven Mission Match
+            </h3>
+            <p class="text-gray-600">
+              Our proprietary algorithm matches your personal values and
+              long-term goals to the core mission statements of hiring
+              organizations, not just skills.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="p-6 bg-app-bg rounded-xl shadow-lg border border-gray-100 transition duration-300 hover:shadow-xl"
+          >
+            <i data-lucide="handshake" class="w-8 h-8 text-accent mb-4"></i>
+            <h3 class="text-xl font-bold text-primary mb-2">
+              Vetted B-Corps & NGOs
+            </h3>
+            <p class="text-gray-600">
+              Access exclusive listings from certified B-Corps, leading
+              non-profits, and organizations committed to measurable social and
+              environmental impact.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="p-6 bg-app-bg rounded-xl shadow-lg border border-gray-100 transition duration-300 hover:shadow-xl"
+          >
+            <i data-lucide="trending-up" class="w-8 h-8 text-accent mb-4"></i>
+            <h3 class="text-xl font-bold text-primary mb-2">
+              Career Trajectory Support
+            </h3>
+            <p class="text-gray-600">
+              Visualize potential growth paths within impact sectors and find
+              resources to upskill for your next mission-critical role.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Core Application - The Live Job Board -->
+    <section id="job-board-app" class="py-20 bg-app-bg min-h-screen">
+      <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-12">
+          <h1 class="text-4xl font-bold text-primary mb-2">
+            Live Opportunity Hub
+          </h1>
+          <p class="text-gray-600">
+            Explore vetted, mission-aligned roles in real-time.
+          </p>
+          <p class="text-xs mt-2 text-gray-400">
+            Your Session ID: <span id="user-id">Authenticating...</span>
+          </p>
+        </header>
+
+        <!-- Loading & Error Messages -->
+        <div
+          id="loading-message"
+          class="text-center text-blue-600 text-lg my-8"
+        >
+          <div
+            class="animate-spin inline-block w-6 h-6 border-4 border-blue-600 border-t-transparent rounded-full mr-2"
+          ></div>
+          Connecting to the Emblem Work Database...
+        </div>
+        <div
+          id="error-message"
+          class="hidden bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg my-8"
+          role="alert"
+        >
+          <p class="font-bold">Error:</p>
+          <p id="error-details"></p>
+        </div>
+
+        <!-- Job Filters -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 mb-8 p-4 bg-white rounded-xl shadow-lg border border-gray-200"
+        >
+          <input
+            type="text"
+            id="filter-keyword"
+            placeholder="Filter by keyword (e.g., ESG, Remote, Data Science)"
+            class="flex-grow p-3 border border-gray-300 rounded-lg input-field focus:ring-accent focus:border-accent"
+          />
+          <button
+            id="filter-button"
+            onclick="window.filterAndRenderJobs()"
+            class="bg-accent hover:bg-emerald-600 text-primary font-bold py-3 px-6 rounded-lg shadow-md transition duration-150 ease-in-out"
+          >
+            Search Jobs
+          </button>
+        </div>
+
+        <!-- Job Listings -->
+        <div id="job-list" class="space-y-6">
+          <!-- Job cards will be injected here -->
+        </div>
+
+        <div
+          id="no-jobs-message"
+          class="hidden text-center text-gray-500 text-lg my-12 p-8 bg-white rounded-xl shadow-inner"
+        >
+          <i
+            data-lucide="compass"
+            class="w-8 h-8 text-gray-400 mx-auto mb-4"
+          ></i>
+          <p>
+            No missions match your current filter. Try broadening your search!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact Us Section -->
+    <section id="contact" class="py-20 sm:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl sm:text-5xl font-extrabold text-center text-primary mb-4"
+        >
+          Let's Connect and Collaborate
+        </h2>
+        <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Whether you're looking to list your mission or seeking your next
+          emblem, we're here to help.
+        </p>
+
+        <div
+          class="grid md:grid-cols-2 gap-12 bg-app-bg p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-200"
+        >
+          <!-- Contact Form (Static) -->
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-6">
+              Send Us a Message
+            </h3>
+            <form
+              onsubmit="event.preventDefault(); window.showContactModal();"
+              class="space-y-4"
+            >
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="mt-1 block w-full p-3 border border-gray-300 rounded-lg input-field transition"
+                  placeholder="Jane Doe"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="mt-1 block w-full p-3 border border-gray-300 rounded-lg input-field transition"
+                  placeholder="jane.doe@email.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700"
+                  >Your Message/Inquiry</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  required
+                  class="mt-1 block w-full p-3 border border-gray-300 rounded-lg input-field transition"
+                  placeholder="I'd like to list a job..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-secondary font-bold py-3 rounded-lg hover:bg-gray-700 transition duration-300 shadow-lg"
+              >
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info Side Panel -->
+          <div class="space-y-6 md:pl-8 pt-8 md:pt-0">
+            <h3 class="text-2xl font-bold text-primary mb-4">
+              Contact Details
+            </h3>
+
+            <div class="flex items-start space-x-4">
+              <i
+                data-lucide="mail"
+                class="w-6 h-6 text-accent mt-1 flex-shrink-0"
+              ></i>
+              <div>
+                <p class="font-semibold text-primary">Email Support</p>
+                <a
+                  href="mailto:support@emblemwork.co"
+                  class="text-gray-600 hover:text-accent transition"
+                  >support@emblemwork.co</a
+                >
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <i
+                data-lucide="phone"
+                class="w-6 h-6 text-accent mt-1 flex-shrink-0"
+              ></i>
+              <div>
+                <p class="font-semibold text-primary">General Inquiries</p>
+                <p class="text-gray-600">+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <i
+                data-lucide="building-2"
+                class="w-6 h-6 text-accent mt-1 flex-shrink-0"
+              ></i>
+              <div>
+                <p class="font-semibold text-primary">Office Location</p>
+                <p class="text-gray-600">
+                  100 Mission St, Suite 400, San Francisco, CA 94105
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+              <h4 class="font-semibold text-primary mb-3">Connect With Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="text-primary hover:text-accent transition"
+                  ><i data-lucide="linkedin" class="w-6 h-6"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-accent transition"
+                  ><i data-lucide="twitter" class="w-6 h-6"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-accent transition"
+                  ><i data-lucide="instagram" class="w-6 h-6"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Enhanced Footer -->
+    <footer class="bg-primary py-16 text-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- Column 1: Logo and Tagline -->
+          <div>
+            <div class="flex-shrink-0 mb-3">
+              <span class="text-3xl font-extrabold text-accent">Emblem</span>
+              <span class="text-3xl font-light text-secondary ml-1">Work</span>
+            </div>
+            <p class="text-sm text-gray-400 mt-2">
+              Connecting people to purpose-driven careers.
+            </p>
+          </div>
+
+          <!-- Column 2: Product Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Product</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="#job-board-app"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Job Board</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Company Profiles</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Pricing (For Employers)</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Company Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Company</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="#mission"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Our Mission</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Careers at Emblem</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Legal & Connect -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Legal</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Cookie Settings</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div
+          class="mt-8 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
+        >
+          <p>
+            &copy; 2025 Emblem Work. All rights reserved. Built for purpose.
+          </p>
+          <!-- Social Icons Placeholder (Visible on Mobile) -->
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" class="hover:text-accent transition"
+              ><i data-lucide="linkedin" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-accent transition"
+              ><i data-lucide="twitter" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-accent transition"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- Initialize Lucide Icons -->
+      <script>
+        lucide.createIcons();
+      </script>
+    </footer>
+
+    <!-- Firebase SDK and Application Logic -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+        signInWithCustomToken,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        query,
+        onSnapshot,
+        doc,
+        setDoc,
+        setLogLevel,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      // Global variables provided by the environment
+      const appId =
+        typeof __app_id !== "undefined" ? __app_id : "default-app-id";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBu74WfyXE0cb_Yhn453Gthw6tC2W8tObc",
+        authDomain: "emblem-work.firebaseapp.com",
+        databaseURL: "https://emblem-work-default-rtdb.firebaseio.com",
+        projectId: "emblem-work",
+        storageBucket: "emblem-work.firebasestorage.app",
+        messagingSenderId: "589142671614",
+        appId: "1:589142671614:web:81031c1ca036069e9665af",
+        measurementId: "G-VRR5T7H68P",
+      };
+      const initialAuthToken =
+        typeof __initial_auth_token !== "undefined"
+          ? __initial_auth_token
+          : null;
+
+      let db = null;
+      let auth = null;
+      let currentUserId = null;
+      let jobListings = [];
+      const COLLECTION_PATH = `artifacts/${appId}/public/data/jobs`;
+
+      // Set Firebase logging level for debugging
+      setLogLevel("debug");
+
+      /**
+       * Utility function to show a custom modal message (replaces alert()).
+       */
+      function showCustomModal(title, message, icon) {
+        const modalId = "custom-modal";
+        let modalElement = document.getElementById(modalId);
+        if (modalElement) modalElement.remove();
+
+        const iconSvg = `<i data-lucide="${icon}" class="w-10 h-10 text-accent mx-auto mb-4"></i>`;
+
+        modalElement = document.createElement("div");
+        modalElement.id = modalId;
+        modalElement.innerHTML = `
+                <div class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[9999]">
+                    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center">
+                        ${iconSvg}
+                        <h3 class="text-xl font-bold text-primary mb-3">${title}</h3>
+                        <p class="text-gray-600 mb-6">${message}</p>
+                        <button onclick="document.getElementById('${modalId}').remove()" class="bg-primary text-secondary px-6 py-2 rounded-lg font-semibold hover:bg-gray-700 transition">Close</button>
+                    </div>
+                </div>
+            `;
+        document.body.appendChild(modalElement);
+        lucide.createIcons(); // Initialize icons in the new modal
+      }
+
+      /**
+       * Shows a message box for applying (instead of alert).
+       */
+      window.showApplyModal = function (jobTitle) {
+        showCustomModal(
+          "Application Intent Registered",
+          `You are applying for the role: <strong>${jobTitle}</strong>. In a full system, you would be redirected to the application form.`,
+          "check-circle"
+        );
+      };
+
+      /**
+       * Shows a message box for contact form submission (instead of alert).
+       */
+      window.showContactModal = function () {
+        // Optional: Clear form fields here before showing modal
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+        showCustomModal(
+          "Message Received!",
+          "Thank you for reaching out! A member of the Emblem Work team will be in touch shortly.",
+          "send"
+        );
+      };
+
+      /**
+       * Seeds the job collection with initial data if it's empty.
+       */
+      async function seedInitialData() {
+        if (!db) return;
+
+        const initialJobs = [
+          {
+            id: "job1",
+            title: "Senior Sustainability Analyst",
+            company: "EcoFuture Inc.",
+            location: "San Francisco, CA / Remote",
+            type: "Full-time",
+            description:
+              "Lead our ESG reporting and climate risk mitigation strategies.",
+            tags: ["ESG", "Remote", "Analysis", "Impact"],
+          },
+          {
+            id: "job2",
+            title: "Mission-Driven Full-Stack Developer",
+            company: "TechForGood B-Corp",
+            location: "Seattle, WA",
+            type: "Full-time",
+            description:
+              "Build scalable platforms for non-profit organizations using React and Node.js.",
+            tags: ["React", "Node.js", "Tech", "B-Corp"],
+          },
+          {
+            id: "job3",
+            title: "Community Engagement Manager",
+            company: "Local Harvest Co.",
+            location: "Austin, TX",
+            type: "Part-time",
+            description:
+              "Oversee outreach programs and volunteer coordination for sustainable food initiatives.",
+            tags: ["Non-profit", "Community", "Flexible", "Outreach"],
+          },
+        ];
+
+        try {
+          // We use setDoc with a specific ID to ensure the job is added once idempotently
+          for (const job of initialJobs) {
+            await setDoc(doc(db, COLLECTION_PATH, job.id), job);
+          }
+          console.log("Initial job data seeded successfully.");
+        } catch (error) {
+          console.error("Error seeding initial data:", error);
+        }
+      }
+
+      /**
+       * Initializes Firebase and authenticates the user.
+       */
+      async function initializeFirebase() {
+        try {
+          const app = initializeApp(firebaseConfig);
+          auth = getAuth(app);
+          db = getFirestore(app);
+
+          const loadingElement = document.getElementById("loading-message");
+          loadingElement.classList.remove("hidden");
+
+          // 1. Handle Authentication
+          onAuthStateChanged(auth, async (user) => {
+            if (user) {
+              currentUserId = user.uid;
+              document.getElementById("user-id").textContent = currentUserId;
+            } else {
+              try {
+                if (initialAuthToken) {
+                  await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                  await signInAnonymously(auth);
+                }
+              } catch (e) {
+                console.error(
+                  "Authentication failed, falling back to anonymous sign-in failed:",
+                  e
+                );
+                document.getElementById("user-id").textContent =
+                  "Guest (Sign-in failed)";
+              }
+            }
+
+            // Start listening to data once authentication is resolved
+            await seedInitialData(); // Ensure initial data is present
+            subscribeToJobs();
+          });
+        } catch (error) {
+          console.error(
+            "Firebase initialization or authentication failed:",
+            error
+          );
+          const errorElement = document.getElementById("error-details");
+          errorElement.textContent = `Setup Error: ${error.message}`;
+          document.getElementById("error-message").classList.remove("hidden");
+          document.getElementById("loading-message").classList.add("hidden");
+        }
+      }
+
+      /**
+       * Subscribes to real-time job listing updates from Firestore.
+       */
+      function subscribeToJobs() {
+        if (!db) return;
+
+        const jobsCollectionRef = collection(db, COLLECTION_PATH);
+        const jobsQuery = query(jobsCollectionRef);
+
+        // Real-time listener
+        onSnapshot(
+          jobsQuery,
+          (snapshot) => {
+            jobListings = snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            console.log("Fetched jobs:", jobListings.length);
+            window.filterAndRenderJobs();
+            document.getElementById("loading-message").classList.add("hidden");
+          },
+          (error) => {
+            console.error("Firestore real-time listener failed:", error);
+            const errorElement = document.getElementById("error-details");
+            errorElement.textContent = `Data Fetch Error: ${error.message}`;
+            document.getElementById("error-message").classList.remove("hidden");
+            document.getElementById("loading-message").classList.add("hidden");
+          }
+        );
+      }
+
+      /**
+       * Renders the filtered list of jobs to the DOM.
+       * @param {Array} jobs - The list of jobs to render.
+       */
+      window.renderJobs = function (jobs) {
+        const jobListElement = document.getElementById("job-list");
+        const noJobsMessage = document.getElementById("no-jobs-message");
+
+        if (!jobListElement) {
+          console.error(
+            "DOM Error: Element with ID 'job-list' not found. Cannot render jobs."
+          );
+          return;
+        }
+
+        jobListElement.innerHTML = ""; // Clear previous listings
+
+        if (jobs.length === 0) {
+          noJobsMessage.classList.remove("hidden");
+        } else {
+          noJobsMessage.classList.add("hidden");
+          jobs.forEach((job) => {
+            const jobCard = `
+                        <div class="job-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                            <h2 class="text-2xl font-bold text-primary">${
+                              job.title || "Untitled Role"
+                            }</h2>
+                            <p class="text-accent font-medium mb-3">${
+                              job.company || "Confidential"
+                            }</p>
+                            <div class="flex flex-wrap items-center space-x-4 text-sm text-gray-500 mb-4">
+                                <span class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-1"></i> ${
+                                  job.location || "Remote"
+                                }</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-1"></i> ${
+                                  job.type || "Full-time"
+                                }</span>
+                            </div>
+                            <p class="mt-3 text-gray-600">${
+                              job.description || "No description provided."
+                            }</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                ${
+                                  job.tags
+                                    ? job.tags
+                                        .map(
+                                          (tag) =>
+                                            `<span class="bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`
+                                        )
+                                        .join("")
+                                    : ""
+                                }
+                            </div>
+                            <button onclick="window.showApplyModal('${
+                              job.title
+                            }')"
+                                    class="mt-6 bg-accent hover:bg-emerald-600 text-primary text-sm font-bold py-3 px-6 rounded-lg transition duration-150 shadow-md transform hover:scale-[1.01]">
+                                Apply Now (Mission)
+                            </button>
+                        </div>
+                    `;
+            jobListElement.innerHTML += jobCard;
+          });
+          // Re-initialize Lucide icons for newly added elements
+          lucide.createIcons();
+        }
+      };
+
+      /**
+       * Filters the global job list based on the keyword input and triggers rendering.
+       */
+      window.filterAndRenderJobs = function () {
+        const keywordInput = document.getElementById("filter-keyword");
+        const keyword = keywordInput ? keywordInput.value.toLowerCase() : "";
+
+        const filteredJobs = jobListings.filter((job) => {
+          if (!keyword) return true; // Show all if filter is empty
+
+          // Ensure job properties exist before calling .toLowerCase()
+          const titleMatch = (job.title || "").toLowerCase().includes(keyword);
+          const companyMatch = (job.company || "")
+            .toLowerCase()
+            .includes(keyword);
+          const descriptionMatch = (job.description || "")
+            .toLowerCase()
+            .includes(keyword);
+
+          // Search in tags array
+          const tagMatch =
+            job.tags &&
+            Array.isArray(job.tags) &&
+            job.tags.some((tag) => (tag || "").toLowerCase().includes(keyword));
+
+          return titleMatch || companyMatch || descriptionMatch || tagMatch;
+        });
+
+        window.renderJobs(filteredJobs);
+      };
+
+      // Start the application setup
+      window.onload = initializeFirebase;
+    </script>
+  </body>
+</html>
