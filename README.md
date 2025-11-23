@@ -6,6 +6,9 @@
 
 This project is a single-page, real-time job board application designed to connect users with mission-driven careers focused on positive environmental, social, and governance (ESG) impact. The application uses **Firebase Realtime Database (RTDB)** for immediate, live updates of job listings.
 
+<img width="1885" height="922" alt="image" src="https://github.com/user-attachments/assets/c27bb942-4298-4fb8-8ae3-62cde363f134" />
+
+
 The entire application—HTML, Tailwind CSS, and JavaScript/Firebase logic—is self-contained within a single `index.html` file, making it easy to deploy and highly portable.
 
 ---
